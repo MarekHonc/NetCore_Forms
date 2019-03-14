@@ -78,5 +78,17 @@ namespace NetCore_Forms.Entities
 			get;
 			set;
 		}
+
+		public static Car Create(string name, DateTime date, CarType type, int power, int brand)
+		{
+			return new Car()
+			{
+				Name = name,
+				ReleaseDate = date,
+				Type = type,
+				Power = power,
+				BrandId = brand
+			};
+		}
 	}
 }

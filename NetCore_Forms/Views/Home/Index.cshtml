@@ -1,12 +1,19 @@
 ﻿@model IEnumerable<NetCore_Forms.Entities.Brand>
 
 <div class="row">
+	<a asp-action="Create" asp-controller="Brand" class="btn btn-primary">Nová značka</a>
+	<a asp-action="Create" asp-controller="Car" class="btn btn-primary">Nové auto</a>
 	@foreach (var brand in Model)
 	{
-		<h4>@brand.Name, @brand.FoundedAt, @brand.ContactEmail</h4>
+		<h4>
+			@brand.Name, @brand.FoundedAt, @brand.ContactEmail
+			<a asp-action="Edit" asp-controller="Brand" class="btn btn-warning" asp-route-id="@brand.Id">Editovat</a>
+			<a asp-action="Create" asp-controller="Car" class="btn btn-warning" asp-route-preselectedBrand="@brand.Id">Přidat auto</a>
+		</h4>
 		foreach (var car in brand.Cars)
 		{
 			<p>@car.Name, @car.ReleaseDate, @car.Type, @car.Power</p>
+			<a asp-action="Edit" asp-controller="Car" class="btn btn-warning" asp-route-id="@car.Id">Editovat</a>
 		}
 	}
 </div>

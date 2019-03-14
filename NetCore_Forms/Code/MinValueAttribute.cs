@@ -17,7 +17,7 @@ namespace NetCore_Forms.Code
 
 		public override bool IsValid(object value)
 		{
-			return (int) value <= this.minValue;
+			return (int) value >= this.minValue;
 		}
 	}
 }

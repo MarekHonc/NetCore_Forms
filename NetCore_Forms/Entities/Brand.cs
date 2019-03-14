@@ -64,5 +64,17 @@ namespace NetCore_Forms.Entities
 			get;
 			set;
 		}
+
+		public static Brand Create(string name, DateTime foundedAt, string email)
+		{
+			var model = new Brand()
+			{
+				Name = name,
+				FoundedAt = foundedAt,
+				ContactEmail = email,
+			};
+
+			return model;
+		}
 	}
 }
