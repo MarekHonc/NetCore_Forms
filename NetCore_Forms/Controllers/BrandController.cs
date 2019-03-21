@@ -1,10 +1,12 @@
 ﻿using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NetCore_Forms.Data;
 using NetCore_Forms.Models;
 
 namespace NetCore_Forms.Controllers
 {
+	[Authorize]
 	public class BrandController : Controller
 	{
 		private readonly EntitiesContext context;

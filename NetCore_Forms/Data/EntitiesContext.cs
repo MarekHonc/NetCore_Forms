@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using NetCore_Forms.Entities;
 
 namespace NetCore_Forms.Data
@@ -6,7 +7,7 @@ namespace NetCore_Forms.Data
 	/// <summary>
 	/// Databázový kontext entit
 	/// </summary>
-	public class EntitiesContext : DbContext
+	public class EntitiesContext : IdentityDbContext<User>
 	{
 		public EntitiesContext(DbContextOptions<EntitiesContext> options) : base(options)
 		{
