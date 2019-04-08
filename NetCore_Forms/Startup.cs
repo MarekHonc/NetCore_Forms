@@ -75,6 +75,16 @@ namespace NetCore_Forms
 				options.LoginPath = "/Identity/Account/Login";
 			});
 
+			services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
+			{
+				microsoftOptions.ClientId = "b9f79a92-d1f2-461c-af40-d8665b9e9883";//Configuration["Authentication:Microsoft:ApplicationId"];
+				microsoftOptions.ClientSecret = "edbbgA416!puJZFAOQ64-~["; //Configuration["Authentication:Microsoft:Password"];
+
+				microsoftOptions.Scope.Add("people.read");
+				microsoftOptions.Scope.Add("profile");
+				microsoftOptions.Scope.Add("openid");
+			});
+
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 		}
 
